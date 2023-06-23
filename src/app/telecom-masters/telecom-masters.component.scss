@@ -1,0 +1,44 @@
+table, td {
+    border: 1px solid black;
+    img{
+        height: 42px;
+    }
+  }
+  th {
+    border-left: 1px solid black;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table {
+      display: flex;
+      flex-flow: column;
+      width: 100%;
+      height: auto;
+      
+  }
+  
+  thead {
+      padding-right: 13px;
+      flex: 0 0 auto;
+  }
+  
+  tbody {
+      flex: 1 1 auto;
+      display: block;
+      overflow-y: auto;
+      overflow-x: hidden;
+  }
+  
+  tr {
+      width: 100%;
+      display: table;
+      table-layout: fixed;
+  }
+  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-fill {
+    background-color: white;
+    color: white !important;
+  }

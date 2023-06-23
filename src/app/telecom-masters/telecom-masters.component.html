@@ -1,0 +1,109 @@
+<div class="container-fluid">
+    <div class="row" style="background: #E5E5E5;">
+      <div class="col">
+        <h3>Service Type Configuration </h3>
+      </div>  
+    </div>
+    <div class="row mt-4 mb-4">
+        <div class="col w-25">
+            <form style="width:300px;">
+              <div class="input-group">
+                <input class="form-control border-end-0 border" type="search" value="search" id="example-search-input">
+                <span class="input-group-append border">
+                    <button class="btn" type="button">
+                        <mat-icon class="fa fa-search">search</mat-icon>
+                    </button>
+                </span>
+            </div>
+            </form>
+        </div>
+        <div class="col"></div>  
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+       <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="TelcoName">Telco Name</label>
+                    <mat-form-field>
+                      <mat-label>Select Telecom</mat-label>
+                      <mat-select [formControl]="telecomFormInput" multiple apperarance="none">
+                        <mat-option *ngFor="let telecom of telecomList" [value]="telecom">{{telecom}}</mat-option>
+                      </mat-select>
+                    </mat-form-field>                 
+                </div>                
+            </div>  
+            <div class="col">                
+                <div class="form-group">
+                    <label for="TelcoName">Service Type</label>                    
+                      <mat-form-field>
+                        <mat-label>Service Type</mat-label>
+                        <mat-select [formControl]="telecomServiceTypeInput" multiple apperarance="none">
+                          <mat-option *ngFor="let telecom of telecomServiceType" [value]="telecom">{{telecom}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>            
+                </div>
+            </div>  
+            <div class="col">                
+                <div class="form-group">
+                    <label for="TelcoName">Select Active</label>                    
+                      <mat-form-field>
+                        <mat-label>Select Active</mat-label>
+                        <mat-select [formControl]="telecomServiceTypeInput" apperarance="none">
+                          <mat-option>Active</mat-option>
+                          <mat-option>Inactive</mat-option>
+                        </mat-select>
+                      </mat-form-field>                      
+                </div>
+            </div>  
+            <div class="col align-self-center">                
+                <div class="form-group">
+                    <button type="button" class="btn btn-light">Submit</button>                   
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Sl.No</th>
+                <th>Telecom Name</th>
+                <th>Is Active</th>
+                <th>Avatar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let userData of listUserDetails?.data">
+                <td>{{userData.id}}</td>
+                <td>{{userData.first_name}} {{userData.last_name}}</td>
+                <td>{{userData.email}}</td>
+                <td><img class="img-thumbnail" src="{{userData.avatar}}"></td>
+              </tr>
+            </tbody>
+          </table>
+            </div>
+        </div>
+        </div>
+        
+      </div>
+</div>
+
+<div class="container-fluid">
+   <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="card-body">
+     <div class="row mt-4 mb-4">
+         <div class="col">
+          <mat-paginator [length]="20"
+        [pageSize]="10"
+        [pageSizeOptions]="[10,20]"
+        aria-label="Select page">
+        </mat-paginator>
+          </div>
+          </div>
+          </div>
+  </div>
+</div>
