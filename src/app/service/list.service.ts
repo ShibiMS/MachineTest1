@@ -12,10 +12,21 @@ export class ListService {
   private _subject = new Subject<any>();
   constructor(private http: HttpClient) { }
 
-  getListingDetails(){
-    return this.http.get(this.url+'/users?page=1&per_page=10');
-    
-  }  
+  getListingDetails1(){
+    return this.http.get(this.url+'/users?page=1&per_page=10');    
+  }
+  getListingDetails(
+    pageNumber: Number,
+    pageSize: Number
+  ): Observable<any> {    
+    return this.http.get(this.url+`/users?page=${pageNumber}&per_page=${pageSize}`);  
+  }
+  getEditById(id: number){
+    return this.http.get(this.url+'/users/'+id);
+  }
+  updateEditById(id: number, body: any){
+    return this.http.put(this.url+'/users/'+id, body);
+  }
   newEvent(event: any) {
     this._subject.next(event);
   }
@@ -23,5 +34,7 @@ export class ListService {
   get events$ () {
     return this._subject.asObservable();
   }
+
+
 
 }

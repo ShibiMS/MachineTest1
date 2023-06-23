@@ -74,6 +74,7 @@
                 <th>Telecom Name</th>
                 <th>Is Active</th>
                 <th>Avatar</th>
+                <th>Edit</th>
               </tr>
             </thead>
             <tbody>
@@ -82,6 +83,9 @@
                 <td>{{userData.first_name}} {{userData.last_name}}</td>
                 <td>{{userData.email}}</td>
                 <td><img class="img-thumbnail" src="{{userData.avatar}}"></td>
+                <td> <button class="btn" type="button" (click)="openModal(editProfileModal, userData.id)">
+                  <mat-icon class="fa fa-edit">edit</mat-icon>
+              </button></td>
               </tr>
             </tbody>
           </table>
@@ -97,13 +101,55 @@
     <div class="card-body">
      <div class="row mt-4 mb-4">
          <div class="col">
-          <mat-paginator [length]="20"
-        [pageSize]="10"
-        [pageSizeOptions]="[10,20]"
-        aria-label="Select page">
-        </mat-paginator>
+          <mat-paginator 
+          #paginator
+          [length]="totalData"
+            [pageSize]="10"
+            [pageSizeOptions]="[10,20]"
+            aria-label="Select page">
+          </mat-paginator>
           </div>
           </div>
           </div>
   </div>
 </div>
+
+<!-- Modal-->
+
+<!-- Button trigger modal -->
+<ng-template #editProfileModal let-modal>
+  <div class="modal-header">
+   <h5 class="modal-title" id="editProfileLabel">Edit Profile</h5>
+   <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+   </button>
+  </div>
+  
+  <div class="modal-body">
+   <form [formGroup]="editProfileForm" (ngSubmit)="onSubmit(this.listsingleUserDetails?.data.id)">
+    <div class="form-group row">
+     <label for="firstname" class="col-sm-4 col-form-label">First Name</label>
+     <div class="col-sm-8">
+      <input type="text" class="form-control" formControlName="firstname" id="firstname">
+     </div>
+    </div>
+    <div class="form-group row">
+     <label for="lastname" class="col-sm-4 col-form-label">Last Name</label>
+     <div class="col-sm-8">
+      <input type="text" class="form-control" formControlName="lastname" id="lastname">
+     </div>
+    </div>    
+    <div class="form-group row">
+     <label for="email" class="col-sm-4 col-form-label">Email</label>
+     <div class="col-sm-8">
+      <input type="email" class="form-control" formControlName="email" id="email">
+     </div>
+    </div>
+    <img class="img-thumbnail" src="{{this.listsingleUserDetails?.data.avatar}}">
+    <div class="modal-footer">
+     <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Close</button>
+     <button type="submit" class="btn btn-primary">Save changes</button>
+    </div>
+   </form>
+  </div>
+ </ng-template>

@@ -17,11 +17,23 @@
       </div>
       <div class="list-group list-group-flush">
         <a  routerLinkActive="active" class="list-group-item list-group-item-action bg-dark">Dashboard</a>
-        <a routerLink="/" routerLinkActive="active" class="list-group-item list-group-item-action bg-dark">Telecom Masters</a>
-        <a routerLinkActive="active" class="list-group-item list-group-item-action bg-dark">Telecom</a>
-        <a routerLinkActive="active" class="list-group-item list-group-item-action bg-dark">Telecom Service</a>
-        <a routerLinkActive="active" class="list-group-item list-group-item-action bg-dark">Service Configuration</a>
-        <a routerLinkActive="active"  class="list-group-item list-group-item-action bg-dark">Telecom Price</a>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">       
+            <a routerLink="/" routerLinkActive="active" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              Telecom Masters
+            </a>        
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="list-group list-group-flush" style="border-bottom: 2px solid #fff; background-color: #003467
+                ;">
+                <a routerLinkActive="active" class="list-group-item list-group-item-action bg-dark">Telecom</a>
+                <a routerLinkActive="active" class="list-group-item list-group-item-action bg-dark">Telecom Service</a>
+                <a routerLinkActive="active" class="list-group-item list-group-item-action bg-dark">Service Configuration</a>
+                <a routerLinkActive="active"  class="list-group-item list-group-item-action bg-dark">Telecom Price</a>
+                </div>
+              
+            </div>
+          </div>
+          </div>      
         <a routerLinkActive="active" class="list-group-item list-group-item-action bg-dark">Process</a>
         <a routerLinkActive="active" class="list-group-item list-group-item-action bg-dark">Report</a>
         <a routerLinkActive="active" class="list-group-item list-group-item-action bg-dark">Change Password</a>
@@ -29,5 +41,4 @@
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
-
 
