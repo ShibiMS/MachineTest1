@@ -1,11 +1,20 @@
 table, td {
-    border: 1px solid black;
+  border: 1px solid #D5D4D4;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #848383;
     img{
         height: 42px;
     }
   }
   th {
-    border-left: 1px solid black;
+    border-left: 1px solid #D5D4D4;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;    
+    line-height: 24px;
+    color: #505050;
+    ;
   }
   
   table {
@@ -22,7 +31,14 @@ table, td {
   }
   
   thead {
-      padding-right: 13px;
+    tr{
+      th{
+        background: #E4E3E9;
+        height: 50px;
+        vertical-align: middle;
+      }      
+    }
+      
       flex: 0 0 auto;
   }
   
@@ -37,8 +53,48 @@ table, td {
       width: 100%;
       display: table;
       table-layout: fixed;
+      vertical-align: middle;
   }
-  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-fill {
+  ::ng-deep .mat-form-field-appearance-fill .mdc-text-field {
     background-color: white;
     color: white !important;
   }
+  .table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #ffffff; // Choose your own color here
+   --bs-table-bg-type: #ffffff;
+}
+.table-striped>tbody>tr:nth-child(even)>td, 
+.table-striped>tbody>tr:nth-child(even)>th {
+   background-color: #EAEEFF; // Choose your own color here
+}
+h3{
+      text-transform: capitalize;
+      font-family: "Poppins", sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 60px;
+      color:#505050;
+      margin-bottom: 0;
+}
+h4{
+  text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 60px;
+  color:#9F9F9F;
+  margin-bottom: 0;
+}
+label{  
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  color: #505050;
+  font-weight: 500;
+}
+.iconAddExcel img{
+  width: 50px;
+  height: 42px;
+  object-fit: contain;
+}

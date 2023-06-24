@@ -1,20 +1,69 @@
+#sidebar-wrapper{
+  width: max-content;
+}
 .top-logo {
     flex-direction: row;   
+    .card-title{      
+      text-transform: uppercase;
+      font-family: "Poppins", sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 18px;
+    }
+    .card-text{
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      line-height: 18px;
+      color: #426F98E5;
+
+    }
+    .top-logo-img {
+      width: 30%;
+      padding: 0px;
+      border: 0;
+      border-radius: 0; 
+    }
   }
-  .top-logo-img {
-    width: 30%;
-    padding: 0px;
-    border: 0;
-    border-radius: 0; 
+  .userLogo{
+    .admin-img{
+      width: 80px;
+    }
+    .card-title{      
+      text-transform: capitalize;
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 500;
+    }
+    .card-text{
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      line-height: 18px;
+      color: #426F98E5;
+    }
   }
+
   .card{
     background: #00274F !important;
     color: white;
+    border-bottom: 0.15px solid #e6e0e0;
+    border-radius: 0;
   }
-  
-  .admin-img{
-    width: 80px;
+  .list-group{
+    a{
+      font-family: "Poppins", sans-serif;
+      font-size: 20px;
+      line-height: 60px;
+      color: #426F98;
+      svg{
+        width: auto;
+      }
+    }
   }
+
   .active {
     background-color: #FFB802 !important;
+  }
+  .accordion-item{
+    border-left: none;
   }

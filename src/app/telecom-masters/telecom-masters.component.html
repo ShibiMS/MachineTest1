@@ -3,6 +3,9 @@
       <div class="col">
         <h3>Service Type Configuration </h3>
       </div>  
+      <div class="col d-flex justify-content-end">
+        <h4>Login/Dashboard </h4>
+      </div>  
     </div>
     <div class="row mt-4 mb-4">
         <div class="col w-25">
@@ -16,8 +19,11 @@
                 </span>
             </div>
             </form>
-        </div>
-        <div class="col"></div>  
+        </div>        
+        <div class="col d-flex justify-content-end iconAddExcel">
+            <img src="../../assets/add.png" class="pe-2">
+            <img src = "../../assets/excel.png">
+          </div>        
     </div>
 </div>
 
@@ -84,7 +90,7 @@
                 <td>{{userData.email}}</td>
                 <td><img class="img-thumbnail" src="{{userData.avatar}}"></td>
                 <td> <button class="btn" type="button" (click)="openModal(editProfileModal, userData.id)">
-                  <mat-icon class="fa fa-edit">edit</mat-icon>
+                  <img src="../../assets/edit.png" style="width: 30px; height:30px;">
               </button></td>
               </tr>
             </tbody>
